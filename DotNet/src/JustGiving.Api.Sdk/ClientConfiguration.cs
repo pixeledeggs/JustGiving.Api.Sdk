@@ -13,6 +13,7 @@ namespace JustGiving.Api.Sdk
         public string WhiteLabelDomain { get; set; }
         public bool IsZipSupportedByClient { get; set; }
         public TimeSpan? ConnectionTimeOut { get; set; }
+        public string ApiSecret { get; set; }
 
         public ClientConfiguration(string apiKey): this("https://api.justgiving.com/", apiKey, 1)
         { 

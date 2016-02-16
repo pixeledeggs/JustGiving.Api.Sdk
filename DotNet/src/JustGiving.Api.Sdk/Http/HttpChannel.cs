@@ -40,6 +40,11 @@ namespace JustGiving.Api.Sdk.Http
                 _httpClient.AddHeader("Authorize", "Basic " + credentials);
                 _httpClient.AddHeader("Authorization", "Basic " + credentials);
             }
+
+            if (!string.IsNullOrEmpty(ClientConfiguration.ApiSecret))
+            {
+                _httpClient.AddHeader("x-application-key", ClientConfiguration.ApiSecret);
+            }
         }
 
         private void SetZippingHeader()
