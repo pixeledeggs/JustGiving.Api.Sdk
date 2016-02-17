@@ -33,6 +33,23 @@ namespace JustGiving.Api.Sdk.ApiClients
 			HttpChannel.GetAsync(locationFormat, callback);
         }
 
+        public string RetrieveLeaderboardFormat(int eventId)
+        {
+            return ResourceBase + "/" + eventId + "/leaderboard";
+        }
+
+        public Leaderboard RetrieveLeaderboard(int eventId)
+        {
+            var locationFormat = RetrieveLeaderboardFormat(eventId);
+            return HttpChannel.Get<Leaderboard>(locationFormat);
+        }
+
+        public void RetrieveLeaderboardAsync(int eventId, Action<Leaderboard> callback)
+        {
+            var locationFormat = RetrieveLeaderboardFormat(eventId);
+            HttpChannel.GetAsync(locationFormat, callback);
+        }
+
         public string RetrievePagesLocationFormat(int eventId, int? pageSize, int? pageNumber)
         {
 			var locationFormat = ResourceBase + "/" + eventId + "/pages";

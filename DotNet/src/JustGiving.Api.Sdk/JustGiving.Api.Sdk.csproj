@@ -141,6 +141,7 @@
     <Compile Include="Model\Event\EventRegistrationResponse.cs" />
     <Compile Include="Model\Event\EventType.cs" />
     <Compile Include="Model\Event\GetPagesForEventResponse.cs" />
+    <Compile Include="Model\Event\Leaderboard.cs" />
     <Compile Include="Model\OneSearch\GroupedResults.cs" />
     <Compile Include="Model\OneSearch\OneSearchResponse.cs" />
     <Compile Include="Model\OneSearch\Results.cs" />
