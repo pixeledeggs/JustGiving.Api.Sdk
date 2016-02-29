@@ -22,7 +22,7 @@ namespace JustGiving.Api.Sdk.ApiClients
 
         public string ListAllLocationFormat()
         {
-            if (string.IsNullOrEmpty(HttpChannel.ClientConfiguration.Username) || string.IsNullOrEmpty(HttpChannel.ClientConfiguration.Password))
+            if (!HttpChannel.ClientConfiguration.HasCredentials())
             {
                 throw new Exception("Authentication required to list pages.  Please set a valid configuration object.");
             }
@@ -32,7 +32,7 @@ namespace JustGiving.Api.Sdk.ApiClients
 
         public string ListAllLocationPaginatedFormat()
         {
-            if (string.IsNullOrEmpty(HttpChannel.ClientConfiguration.Username) || string.IsNullOrEmpty(HttpChannel.ClientConfiguration.Password))
+            if (!HttpChannel.ClientConfiguration.HasCredentials())
             {
                 throw new Exception("Authentication required to list pages.  Please set a valid configuration object.");
             }

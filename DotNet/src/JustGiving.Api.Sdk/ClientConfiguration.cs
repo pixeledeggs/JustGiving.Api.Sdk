@@ -14,10 +14,20 @@ namespace JustGiving.Api.Sdk
         public bool IsZipSupportedByClient { get; set; }
         public TimeSpan? ConnectionTimeOut { get; set; }
         public string ApiSecret { get; set; }
+        public string BearerToken { get; set; }
 
         public ClientConfiguration(string apiKey): this("https://api.justgiving.com/", apiKey, 1)
         { 
         }
+
+        internal bool HasCredentials()
+        {
+            var noUsernamePassword = (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password));
+            var noBearerToken = string.IsNullOrEmpty(BearerToken);
+
+            return !(noUsernamePassword && noBearerToken);
+        }
+
         public ClientConfiguration(string rootDomain, string apiKey, int apiVersion)
         {
             if (string.IsNullOrEmpty(rootDomain))

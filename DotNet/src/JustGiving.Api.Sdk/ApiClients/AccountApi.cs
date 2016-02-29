@@ -111,7 +111,7 @@ namespace JustGiving.Api.Sdk.ApiClients
 
         private string RetrieveAccountLocationFormat()
         {
-            if (string.IsNullOrEmpty(HttpChannel.ClientConfiguration.Username) || string.IsNullOrEmpty(HttpChannel.ClientConfiguration.Password))
+            if (!HttpChannel.ClientConfiguration.HasCredentials())
             {
                 throw new Exception("Authentication required to retrieve account details.");
             }
