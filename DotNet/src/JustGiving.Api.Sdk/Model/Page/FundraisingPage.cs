@@ -33,7 +33,7 @@ namespace JustGiving.Api.Sdk.Model.Page
         [DataMember(Name = "owner", EmitDefaultValue = false)]
         public string PageCreatorName { get; set; }
         [DataMember(Name = "ownerProfileImageUrls", EmitDefaultValue = false)]
-        public IEnumerable<KeyValuePair<string, string>> PageCreatorProfileImageUrls { get; set; }
+        public Dictionary<string, string> PageCreatorProfileImageUrls { get; set; }
         [DataMember(Name = "title", EmitDefaultValue = false)]
         public string PageTitle { get; set; }
         [DataMember(Name = "showEventDate", EmitDefaultValue = false)]
