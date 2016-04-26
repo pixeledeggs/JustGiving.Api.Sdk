@@ -67,9 +67,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiClients\CampaignApi.cs" />
     <Compile Include="ApiClients\CharityApi.cs" />
     <Compile Include="ApiClients\CountryApi.cs" />
     <Compile Include="ApiClients\CurrencyApi.cs" />
+    <Compile Include="ApiClients\ICampaignApi.cs" />
     <Compile Include="ApiClients\ICountryApi.cs" />
     <Compile Include="ApiClients\ICountryApiAsync.cs" />
     <Compile Include="ApiClients\ICurrencyApi.cs" />
@@ -138,6 +140,7 @@
     <Compile Include="Model\ActivityType.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Account\CreateAccountRequest.cs" />
+    <Compile Include="Model\Campaign\Campaign.cs" />
     <Compile Include="Model\Charity\AuthenticateCharityUserRequest.cs" />
     <Compile Include="Model\Charity\Charity.cs" />
     <Compile Include="Model\Charity\CharityAuthenticationResult.cs" />

@@ -17,6 +17,7 @@ namespace JustGiving.Api.Sdk
         public ICountryApi Country { get; set; }
         public ICurrencyApi Currency { get; set; }
         public IProjectApi Project { get; set; }
+        public ICampaignApi Campaign { get; set; }
 
         public string WhiteLabelDomain { get; private set; }
         public IHttpClient HttpClient { get; private set; }
@@ -25,7 +26,7 @@ namespace JustGiving.Api.Sdk
         public HttpChannel HttpChannel { get; private set; }
 
         protected JustGivingClientBase(ClientConfiguration clientConfiguration, IHttpClient httpClient)
-            : this(clientConfiguration, httpClient, null, null, null, null, null, null, null, null, null, null, null)
+            : this(clientConfiguration, httpClient, null, null, null, null, null, null, null, null, null, null, null, null)
         {
         }
 
@@ -39,7 +40,7 @@ namespace JustGiving.Api.Sdk
                                        IEventApi eventApi,
                                        ITeamApi teamApi, IOneSearchApi oneSearch,
                                        ICountryApi country, ICurrencyApi currency,
-                                       IProjectApi project)
+                                       IProjectApi project, ICampaignApi campaign)
         {
             if (httpClient == null)
             {
@@ -60,6 +61,7 @@ namespace JustGiving.Api.Sdk
             Country = country;
             Currency = currency;
             Project = project;
+            Campaign = campaign;
 
             Configuration = clientConfiguration;
 
@@ -87,6 +89,7 @@ namespace JustGiving.Api.Sdk
             Country = Country ?? new CountryApi(HttpChannel);
             Currency = Currency ?? new CurrencyApi(HttpChannel);
             Project = Project ?? new ProjectApi(HttpChannel);
+            Campaign = Campaign ?? new CampaignApi(HttpChannel);
         }
 
         public void UpdateConfiguration(ClientConfiguration configuration)
