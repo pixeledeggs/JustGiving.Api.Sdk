@@ -11,7 +11,7 @@ namespace JustGiving.Api.Sdk.ApiClients
     {
         public override string ResourceBase
         {
-            get { return "{apiKey}/v{apiVersion}/charity"; }
+            get { return "{apiKey}/v{apiVersion}/campaigns"; }
         }
 
         public CampaignApi(HttpChannel channel)

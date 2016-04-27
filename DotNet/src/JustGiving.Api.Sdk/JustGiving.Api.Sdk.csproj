@@ -141,6 +141,7 @@
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\Account\CreateAccountRequest.cs" />
     <Compile Include="Model\Campaign\Campaign.cs" />
+    <Compile Include="Model\Campaign\Image.cs" />
     <Compile Include="Model\Charity\AuthenticateCharityUserRequest.cs" />
     <Compile Include="Model\Charity\Charity.cs" />
     <Compile Include="Model\Charity\CharityAuthenticationResult.cs" />
